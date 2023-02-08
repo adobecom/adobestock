@@ -22,7 +22,7 @@ const LIBS = 'https://milo.adobe.com/libs';
 const CONFIG = {
   // codeRoot: '',
   // contentRoot: '',
-  // imsClientId: 'college',
+  imsClientId: 'stockpoc',
   // geoRouting: 'off',
   // fallbackRouting: 'off',
   locales: {
