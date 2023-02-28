@@ -1,17 +1,5 @@
-# Milo goes to college
-Use this project template to create a Milo site.
-
-## Steps
-
-1. Copy existing [`college`](https://adobe.sharepoint.com/:f:/r/sites/adobecom/Shared%20Documents/) content folder to your sharepoint and give helix@adobe.com View access
-2. Click "[Use this template](https://github.com/adobecom/milo-college/generate)" Github button on this project.
-
-From your newly created project
-
-1. Install the [Helix Bot](https://github.com/apps/helix-bot/installations/new).
-2. Change the fstab.yaml file to point to your content.
-3. Add the project to the [Helix Sidekick](https://github.com/adobe/helix-sidekick).
-4. Start creating your content.
+# stock-poc
+This repository is the first attempt at bringing Franklin/Milo into the Stock ecosystem. The ongoing effort is captured in this [SPIKE](https://wiki.corp.adobe.com/x/5U7How).
 
 ## Developing
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `sudo npm install -g @adobe/helix-cli`
