@@ -1,6 +1,14 @@
+# Franklin-specific + tests
 .hlx/*
 coverage/*
 logs/*
+
+# NPM
 node_modules/*
+
+# OSX
 .DS_Store
+
+# IDE
 .idea
+.vscode
