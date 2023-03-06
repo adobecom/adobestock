@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable max-len */
 import { createTag } from '../../franklin_scripts/scripts/utils.js';
 
 /**
@@ -46,6 +48,24 @@ function getAssetType($assetDropdownSelect) {
 function redirectSearch($searchBar, $assetDropdownSelect) {
   const assetType = getAssetType($assetDropdownSelect);
   const keyword = $searchBar.value.replace(' ', '+');
+
+  // eslint-disable-next-line no-underscore-dangle
+  window._satellite.track('event', {
+    xdm: {},
+    data: {
+      web: {
+        webInteraction: {
+          name: 'search', // Name of the user events- event name should be set here
+        },
+      },
+      _adobe_corpnew: {
+        digitalData: {
+          'ui.search_keyword': keyword,
+          'stk.search.asset_type_selected': assetType,
+        }, // Any custom properties required for event
+      },
+    },
+  });
 
   // @todo env-specific route?
   window.location.href = `https://stock.adobe.com/search/${assetType}?k=${keyword}&search_type=usertyped`;
@@ -100,6 +120,23 @@ export default function init(el) {
   $assetDropdownSelect.addEventListener('change', (e) => {
     const selectedAssetType = e.currentTarget.value;
     document.cookie = `${LAST_SELECTED_ASSET_TYPE_COOKIE}=${selectedAssetType}`;
+
+    // eslint-disable-next-line no-underscore-dangle
+    window._satellite.track('event', {
+      xdm: {},
+      data: {
+        web: {
+          webInteraction: {
+            name: 'asset-type-change', // Name of the user events- event name should be set here
+          },
+        },
+        _adobe_corpnew: {
+          digitalData: {
+            'stk.search.asset_type_selected': selectedAssetType,
+          }, // Any custom properties required for event
+        },
+      },
+    });
   });
 
   /**
