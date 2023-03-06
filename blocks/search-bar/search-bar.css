@@ -1,0 +1,129 @@
+.search-bar {
+  position: relative;
+  padding: 10px;
+  height: 58px;
+  transition: max-width 0.5s;
+  display: flex;
+  font-family: var(--body-font-family);
+}
+
+.search-form-wrapper {
+  display: inline-flex;
+    flex: 1 1 0%;
+    position: relative;
+    max-width: 804px;
+    margin: 0px auto;
+}
+
+.search-input-wrapper {
+    display: inline-flex;
+    flex: 1 1 0%;
+    position: relative;
+    max-width: 804px;
+    margin: 0px auto;
+    border-radius: 4px;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: rgb(225, 225, 225);
+    border-image: initial;
+    background-color: rgb(234, 234, 234);
+}
+
+.asset-dropdown-select-wrapper {
+  background-color: rgb(255, 255, 255);
+  border-left: 1px solid #e1e1e1;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color: #4b4b4b;
+  font-size: 14px;
+  display: flex;
+  position: relative;
+}
+
+.asset-dropdown-select {
+  border: 0;
+  padding: 0px 28px 0px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  appearance: none;
+}
+
+.asset-dropdown-select-icon-wrapper {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-self: center;
+  color: rgb(75, 75, 75);
+  display: flex;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  background: url('../../img/ui/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.asset-type-selector-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.search-bar .stock-search-bar {
+  box-sizing: border-box;
+  margin: 0;
+  color: rgb(75, 75, 75);
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0px 26px 0px 8px;
+  line-height: 1.5;
+  width: 100%;
+  transition: max-width 0.5s, padding-right 0.5s, padding-left 0.5s;
+  display: flex;
+  transition: border 300ms ease 0s;
+  background-color: rgb(234, 234, 234);
+  flex: 1 1 0%;
+  position: relative;
+  min-width: 112px;
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  border-color: rgb(225, 225, 225);
+  border-image: initial;
+  outline: none;
+}
+
+.stock-search-bar::placeholder {
+  transition: color 0.5s;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.search-input-icon-button {
+  background-color: rgb(234, 234, 234);
+  background: url('../../img/ui/search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0px;
+  text-align: left;
+  appearance: none;
+  color: rgb(75, 75, 75);
+  display: inline-block;
+  height: inherit;
+  margin: 0 4px 0 16px;
+}
+
+.search-input-icon-button:hover,
+.search-input-icon-button:focus,
+.search-input-icon-button:active {
+    cursor: pointer;
+}
+
+.search-input-icon {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
