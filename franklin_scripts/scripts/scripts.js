@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import { setLibs } from './utils.js';
+import { setLibs, createTag } from './utils.js';
 
 // Add project-wide style path here.
-const STYLES = '';
+const STYLES = '/styles/styles.css';
 
 // Use '/libs' if your live site maps '/libs' to milo's origin.
 const LIBS = 'https://milo.adobe.com/libs';
@@ -57,10 +57,71 @@ const miloLibs = setLibs(LIBS);
   });
 }());
 
+/**
+ * Helper method to load Stock footer left links
+ * After Milo's footer component is loaded
+ */
+function loadFooter() {
+  const footerLeftLinks = [
+    {
+      textContent: 'License Terms',
+      href: 'https://stock.adobe.com/license-terms',
+    },
+    {
+      textContent: 'Learn & Support',
+      href: 'https://helpx.adobe.com/support/stock.html',
+    },
+    {
+      textContent: 'Blog',
+      href: 'https://blog.adobe.com/en/topics/stock.html',
+    },
+    {
+      textContent: 'Company',
+      href: 'https://www.adobe.com/company.html',
+    },
+    {
+      textContent: 'Sell Images',
+      href: 'https://contributor.stock.adobe.com/?as_channel=stock&as_source=globalnav&as_campclass=brand&as_campaign=footer',
+    },
+    {
+      textContent: 'Enterprise',
+      href: 'https://stockenterprise.adobe.com/',
+    },
+    {
+      textContent: 'Sitemap',
+      href: 'https://stock.adobe.com/sitemap',
+    },
+  ];
+  const $footerLeftLinkGroupColumn = createTag('div', { class: 'footer-info-column' });
+  const $footerLeftLinkGroupWrapper = createTag('div', { class: 'footer-privacy' });
+  const $footerLeftLinkGroupList = createTag('ul', { class: 'footer-privacy-links' });
+
+  // Get last-child in footer which is all the right links incl privacy, ad choices etc.
+  const $footerInfoLastChildElement = document.getElementsByClassName('footer-info')[0].lastChild;
+
+  // Build "li" links and append to "ul" (footerLeftLinkGroupList)
+  footerLeftLinks.forEach((footerLeftLink, idx) => {
+    const { textContent, href } = footerLeftLink;
+    const $footerLeftLinkListItem = createTag('li', { class: 'footer-privacy-link footer-left-link' });
+    const $footerLeftLinkHrefItem = createTag('a', { href, 'daa-ll': `footer-left-link-group-${textContent}-${idx}` });
+    $footerLeftLinkHrefItem.textContent = textContent;
+    $footerLeftLinkListItem.append($footerLeftLinkHrefItem);
+    $footerLeftLinkGroupList.append($footerLeftLinkListItem);
+  });
+
+  // Append "ul" to "div.footer-privacy"
+  $footerLeftLinkGroupWrapper.append($footerLeftLinkGroupList);
+  // Append "div.footer-privacy" to "div.footer-info-column"
+  $footerLeftLinkGroupColumn.append($footerLeftLinkGroupWrapper);
+  // Insert left links component in between "Change region" and Right links
+  document.getElementsByClassName('footer-info')[0].insertBefore($footerLeftLinkGroupColumn, $footerInfoLastChildElement);
+}
+
 (async function loadPage() {
   const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
-  loadDelayed();
+  await loadDelayed();
+  loadFooter();
 }());
