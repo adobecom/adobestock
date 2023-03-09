@@ -13,14 +13,14 @@
 import { setLibs, createTag } from './utils.js';
 
 // Add project-wide style path here.
-const STYLES = '/styles/styles.css';
+const STYLES = '/franklin/styles/styles.css';
 
 // Use '/libs' if your live site maps '/libs' to milo's origin.
 const LIBS = 'https://milo.adobe.com/libs';
 
 // Add any config options.
 const CONFIG = {
-  // codeRoot: '',
+  codeRoot: '/franklin',
   // contentRoot: '',
   imsClientId: 'stockpoc',
   // geoRouting: 'off',
