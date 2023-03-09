@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable max-len */
-import { createTag } from '../../franklin_scripts/scripts/utils.js';
+import { createTag } from '../../scripts/scripts/utils.js';
 
 /**
  * Asset Dropdown List
