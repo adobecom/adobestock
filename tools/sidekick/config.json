@@ -9,14 +9,14 @@
       "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 398px; width: 360px;",
       "url": "https://main--milo--adobecom.hlx.page/tools/library",
       "includePaths": [ "**.docx**" ]
-    },    
+    },
     {
-      "id": "translate",
-      "title": "Translate",
+      "id": "localize",
+      "title": "Localize",
       "environments": [ "edit" ],
-      "url": "https://milo.adobe.com/tools/translation/index.html",
+      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=stockpoc--adobecom",
       "passReferrer": true,
-      "include_paths": [ "**.xlsx**" ]
+      "includePaths": [ "**.xlsx**" ]
     },
     {
       "title": "Send to CaaS",
