@@ -20,7 +20,7 @@
       "id": "localize",
       "title": "Localize",
       "environments": [ "edit" ],
-      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=stock--adobecom",
+      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=stockpoc--adobecom",
       "passReferrer": true,
       "includePaths": [ "**.xlsx**" ]
     },
