@@ -1,5 +1,6 @@
 {
   "project": "Stock POC",
+  "host": "www.stock.adobe.com",
   "plugins": [
     {
       "id": "library",
