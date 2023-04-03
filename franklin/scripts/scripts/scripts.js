@@ -22,7 +22,7 @@ const LIBS = 'https://milo.adobe.com/libs';
 const CONFIG = {
   codeRoot: '/franklin',
   // contentRoot: '',
-  imsClientId: 'stockpoc',
+  imsClientId: 'adobestock',
   // geoRouting: 'off',
   // fallbackRouting: 'off',
   locales: {

@@ -1,5 +1,5 @@
 {
-  "project": "Stock POC",
+  "project": "Adobe Stock",
   "host": "www.stock.adobe.com",
   "plugins": [
     {
@@ -21,7 +21,7 @@
       "id": "localize",
       "title": "Localize",
       "environments": [ "edit" ],
-      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=stockpoc--adobecom",
+      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=adobestock--adobecom",
       "passReferrer": true,
       "includePaths": [ "**.xlsx**" ]
     },
