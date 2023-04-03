@@ -1,5 +1,5 @@
-# stock-poc
-This repository is the first attempt at bringing Franklin/Milo into the Stock ecosystem. The ongoing effort is captured in this [SPIKE](https://wiki.corp.adobe.com/x/5U7How).
+# adobestock
+This repository is the first attempt at bringing Franklin/Milo into the Stock ecosystem.
 
 ## Developing
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `sudo npm install -g @adobe/helix-cli`

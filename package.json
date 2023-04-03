@@ -1,8 +1,8 @@
 {
-  "name": "@adobe/stock-poc",
+  "name": "@adobe/adobestock",
   "private": true,
   "version": "0.0.1",
-  "description": "PoC demonstrating Franklin/Milo integration in Stock.",
+  "description": "Franklin/Milo integration in Stock.",
   "scripts": {
     "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
     "test:watch": "npm test -- --watch",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adobecom/stockpoc.git"
+    "url": "git+https://github.com/adobecom/adobestock.git"
   },
   "author": "Adobe",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/adobecom/stockpoc/issues"
+    "url": "https://github.com/adobecom/adobestock/issues"
   },
-  "homepage": "https://github.com/adobecom/stockpoc#readme",
+  "homepage": "https://github.com/adobecom/adobestock#readme",
   "devDependencies": {
     "@babel/core": "7.17.7",
     "@babel/eslint-parser": "7.17.0",
