@@ -1,6 +1,6 @@
 {
   "project": "Adobe Stock",
-  "host": "www.stock.adobe.com",
+  "host": "stock.adobe.com",
   "plugins": [
     {
       "id": "library",
