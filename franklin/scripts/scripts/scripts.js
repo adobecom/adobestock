@@ -127,5 +127,8 @@ function loadFooter() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadDelayed();
-  loadFooter();
+  const footer = document.querySelector('footer');
+  if (footer) {
+    loadFooter();
+  }
 }());
