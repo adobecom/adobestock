@@ -38,13 +38,8 @@ export const [setLibs, getLibs] = (() => {
   ];
 })();
 
-/* eslint-disable no-restricted-syntax */
-export function createTag(name, attrs) {
-  const el = document.createElement(name);
-  if (typeof attrs === 'object') {
-    for (const [key, value] of Object.entries(attrs)) {
-      el.setAttribute(key, value);
-    }
-  }
-  return el;
-}
+const LIBS = 'https://milo.adobe.com/libs';
+const miloLibs = setLibs(LIBS);
+export const { getConfig, createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
+export const { decorateButtons } = await import(`${miloLibs}/utils/decorate.js`);
+export const { decorateBlockAnalytics, decorateLinkAnalytics } = await import(`${miloLibs}/martech/attributes.js`);
