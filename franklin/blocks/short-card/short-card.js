@@ -3,9 +3,9 @@ import {
   createTag,
   loadStyle,
   decorateLinkAnalytics,
-  decorateButtons 
+  decorateButtons,
+  getMetadata,
 } from '../../scripts/scripts/utils.js';
-import { getMetadata } from '../section-metadata/section-metadata.js';
 
 const HALF = 'OneHalfCard';
 const HALF_HEIGHT = 'HalfHeightCard';
@@ -160,7 +160,7 @@ const init = (el) => {
   if (picture && cardType !== PRODUCT) {
     addBackgroundImg(picture, cardType, card);
   }
-  
+
   picture?.parentElement.remove();
   addInner(el, cardType, card);
   decorateButtons(el);

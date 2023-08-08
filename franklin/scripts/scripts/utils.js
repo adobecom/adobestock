@@ -43,3 +43,4 @@ const miloLibs = setLibs(LIBS);
 export const { getConfig, createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
 export const { decorateButtons } = await import(`${miloLibs}/utils/decorate.js`);
 export const { decorateBlockAnalytics, decorateLinkAnalytics } = await import(`${miloLibs}/martech/attributes.js`);
+export const { getMetadata } = await import((`${miloLibs}/blocks/section-metadata/section-metadata.js`));
