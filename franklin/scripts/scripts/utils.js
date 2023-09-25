@@ -38,13 +38,33 @@ export const [setLibs, getLibs] = (() => {
   ];
 })();
 
-/* eslint-disable no-restricted-syntax */
-export function createTag(name, attrs) {
-  const el = document.createElement(name);
-  if (typeof attrs === 'object') {
-    for (const [key, value] of Object.entries(attrs)) {
-      el.setAttribute(key, value);
-    }
-  }
-  return el;
+const LIBS = 'https://milo.adobe.com/libs';
+const miloLibs = setLibs(LIBS);
+export const { getConfig, createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
+export const { replaceKey } = await import(`${miloLibs}/features/placeholders.js`);
+export const { decorateButtons } = await import(`${miloLibs}/utils/decorate.js`);
+export const { decorateBlockAnalytics, decorateLinkAnalytics } = await import(`${miloLibs}/martech/attributes.js`);
+
+export async function loadBlockCSS(blockName) {
+  const href = `/pages/blocks/${blockName}/${blockName}.css`;
+  if (document.querySelector(`head > link[href="${href}"]`)) return;
+  // eslint-disable-next-line consistent-return
+  return new Promise((resolve) => {
+    loadCSS(href, resolve);
+  });
+}
+
+export function toSentenceCase(str) {
+  return (str && typeof str === 'string') ? str.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, (c) => c.toUpperCase()) : '';
+}
+
+export function makeRelative(href) {
+  const projectName = 'stock--adobecom';
+  const productionDomains = ['stock.adobe.com'];
+  const fixedHref = href.replace(/\u2013|\u2014/g, '--');
+  const hosts = [`${projectName}.hlx.page`, `${projectName}.hlx.live`, ...productionDomains];
+  const url = new URL(fixedHref);
+  const relative = hosts.some((host) => url.hostname.includes(host))
+    || url.hostname === window.location.hostname;
+  return relative ? `${url.pathname}${url.search}${url.hash}` : href;
 }
