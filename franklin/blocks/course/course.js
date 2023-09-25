@@ -18,7 +18,7 @@ import {
   createTag,
   makeRelative,
   decorateBlockAnalytics,
-} from '../../scripts/utils.js';
+} from '../../scripts/scripts/utils.js';
 
 function handlize(string) {
   return string.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '').replace(/^-/, '');
