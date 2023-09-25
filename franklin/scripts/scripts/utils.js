@@ -66,5 +66,5 @@ export function makeRelative(href) {
   const url = new URL(fixedHref);
   const relative = hosts.some((host) => url.hostname.includes(host))
     || url.hostname === window.location.hostname;
-  return relative ? `${url.pathname}${url.search}${url.hash}` : href;
+  return relative ? `${url.pathname}${url.search}${url.hash}` : href;s
 }
