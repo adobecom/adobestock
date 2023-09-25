@@ -123,7 +123,6 @@ function loadFooter() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadDelayed();
-  externalLinks();
   const footer = document.querySelector('footer');
   if (footer) {
     loadFooter();
