@@ -56,7 +56,16 @@
   margin-right: revert !important;
 }
 
+body.artisthub header .gnav .gnav-brand-title {
+  color: #000;
+}
+
 body.artisthub main .section > .content {
-  max-width: 700px;
   padding: var(--spacing-m) 0;
+}
+
+@media(min-width: 1000px) {
+  body.artisthub main .section > .content {
+    max-width: 700px;
+  }
 }
