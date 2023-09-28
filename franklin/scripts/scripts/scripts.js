@@ -123,8 +123,11 @@ function loadFooter() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadDelayed();
-  const footer = document.querySelector('footer');
-  if (footer) {
-    loadFooter();
+
+  if (!window.location.href.includes('/pages/artisthub')) {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      loadFooter();
+    }
   }
 }());
