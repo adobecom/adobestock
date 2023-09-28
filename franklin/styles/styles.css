@@ -1,9 +1,9 @@
-/* 
+/*
  * Put project specific base styles here.
  *
  * Note: The proect does not load this file.
  *       You will need to load these using scripts.js.
- * 
+ *
  *
  */
  .footer-wrapper {
@@ -31,7 +31,7 @@
  .footer-info-column:last-child {
   flex-grow: 1;
  }
- 
+
  .footer-privacy-link.footer-left-link:not(:last-child)::after {
   content: '';
  }
@@ -61,7 +61,7 @@ body.artisthub header .gnav .gnav-brand-title {
 }
 
 body.artisthub main .section > .content {
-  padding: var(--spacing-m) 0;
+  padding: 32px 0;
 }
 
 @media(min-width: 1000px) {
