@@ -118,6 +118,7 @@ function loadFooter() {
 }
 
 (async function loadPage() {
+  document.body.style.display = 'none';
   const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
   setConfig({ ...CONFIG, miloLibs });
@@ -130,4 +131,5 @@ function loadFooter() {
       loadFooter();
     }
   }
+  document.body.style.removeProperty('display');
 }());
