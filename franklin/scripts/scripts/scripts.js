@@ -118,11 +118,12 @@ function loadFooter() {
 }
 
 (async function loadPage() {
-  document.body.style.display = 'none';
+  document.body.style.visibility = 'hidden';
   const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
+  document.body.style.removeProperty('visibility');
   await loadDelayed();
 
   if (!window.location.href.includes('/pages/artisthub')) {
@@ -131,5 +132,4 @@ function loadFooter() {
       loadFooter();
     }
   }
-  document.body.style.removeProperty('display');
 }());
