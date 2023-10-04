@@ -1,9 +1,9 @@
-/* 
+/*
  * Put project specific base styles here.
  *
- * Note: The proect does not load this file.
+ * Note: The project does not load this file.
  *       You will need to load these using scripts.js.
- * 
+ *
  *
  */
 .footer-wrapper {
@@ -74,5 +74,19 @@
     --block-spacing-m: 80px;
     --block-spacing-l: 96px;
     --block-spacing-xl: 120px;
+  }
+}
+  
+body.artisthub header .gnav .gnav-brand-title {
+  color: #000;
+}
+
+body.artisthub main .section > .content {
+  padding: 32px 0;
+}
+
+@media(min-width: 1000px) {
+  body.artisthub main .section > .content {
+    max-width: 700px;
   }
 }
