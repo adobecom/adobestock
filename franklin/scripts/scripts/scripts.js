@@ -118,12 +118,14 @@ function loadFooter() {
 }
 
 (async function loadPage() {
-  document.body.style.visibility = 'hidden';
+  // temporary fix until Milo load template assets differently
+  const template = document.head.querySelector('meta[name="template"]');
+  if (template.content === 'artisthub') document.body.classList.add('artisthub');
+
   const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
-  document.body.style.removeProperty('visibility');
   await loadDelayed();
 
   if (!window.location.href.includes('/pages/artisthub')) {
