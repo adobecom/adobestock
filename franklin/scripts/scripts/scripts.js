@@ -120,7 +120,7 @@ function loadFooter() {
 (async function loadPage() {
   // temporary fix until Milo load template assets differently
   const template = document.head.querySelector('meta[name="template"]');
-  if (template.content === 'artisthub') document.body.classList.add('artisthub');
+  if (template?.content === 'artisthub') document.body.classList.add('artisthub');
 
   const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
