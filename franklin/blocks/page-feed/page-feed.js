@@ -10,6 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
+// use case examples: https://pagefeed-optimize--adobestock--wbstry.hlx.page/drafts/qiyun/page-feed-pr
+
 import {
   createTag,
   getConfig,
