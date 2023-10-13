@@ -1,0 +1,632 @@
+/* (Default) shows an image at the top and text at the bottom */
+
+/* (Overlay) shows an image in the background and a dark overlay with white text in front */
+
+/* (Horizontal) shows an image on the left and text on the right */
+
+/* (Fit) shows the full image without cropping, please make sure to use the same height for each card in a card-set */
+
+/* (Borderless) shows the cards with out the border. It's also a variant that's best used for featured mentors section. */
+
+main .page-feed {
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  gap: 24px;
+  max-width: var(--grid-container-width);
+}
+
+main .page-feed.loading > div {
+  visibility: hidden;
+}
+
+main .page-feed.loading {
+  position: relative;
+}
+
+main .page-feed.loading::after {
+  content: '';
+  background: url('loader-circle.gif') center center no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  min-height: 200px;
+  max-width: none;
+}
+
+main .page-feed + .page-feed {
+  margin-top: 24px;
+}
+
+main .page-feed:last-of-type:not(.load-more-available) {
+  padding-bottom: 80px;
+}
+
+main > .section.has-background > .page-feed:last-child {
+  margin-bottom: 0;
+}
+
+main .page-feed a {
+  text-decoration: none;
+}
+
+main .page-feed + p,
+main .page-feed + a {
+  margin-top: -20px;
+  padding-top: 0;
+}
+
+main .page-feed .pf-card > a {
+  color: unset;
+  font-weight: unset;
+  font-size: unset;
+  line-height: unset;
+  border-color: unset;
+  background: unset;
+  border-radius: unset;
+  padding: unset;
+  margin: unset;
+  height: 100%;
+  text-align: unset;
+  transition: unset;
+  border: unset;
+  white-space: unset;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+main .page-feed .pf-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  min-width: 200px;
+  margin: 0;
+  position: relative;
+  justify-self: center;
+}
+
+main .page-feed.borderless .pf-card,
+main .page-feed.avatar .pf-card {
+  background: transparent;
+  border: unset;
+  border-radius: unset;
+}
+
+main .page-feed .pf-card-text {
+  padding: 16px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+main .page-feed .pf-card-text .pf-card-social-icon {
+  height: 24px;
+  width: 24px;
+}
+
+main .page-feed.borderless .pf-card-text,
+main .page-feed.avatar .pf-card-text {
+  padding: unset;
+  padding-top: 20px;
+}
+
+main .page-feed.horizontal .pf-card-text {
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+main .page-feed .pf-card-text span.detail {
+  text-transform: none;
+  color: #505050;
+  font-weight: 400;
+  padding: 0;
+  letter-spacing: 0;
+}
+
+main .page-feed .pf-card-text a {
+  margin: 0 8px;
+}
+
+main .page-feed .pf-card-text > :first-child {
+  padding-top: 0;
+}
+
+main .page-feed .pf-card-text > :last-child {
+  padding-bottom: 0;
+}
+
+main .page-feed.borderless .pf-card-text > :first-child,
+main .page-feed.avatar .pf-card-text > :first-child {
+  min-height: unset;
+  padding-bottom: 8px;
+}
+
+main .page-feed .pf-card .pf-card-text p,
+main .page-feed .pf-card .pf-card-text h1,
+main .page-feed .pf-card .pf-card-text h2,
+main .page-feed .pf-card .pf-card-text h3,
+main .page-feed .pf-card .pf-card-text h4,
+main .page-feed .pf-card .pf-card-text h5,
+main .page-feed .pf-card .pf-card-text span.detail {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+main .page-feed.pf-overlay .pf-card-text a,
+main .page-feed.pf-overlay .pf-card-text p,
+main .page-feed.pf-overlay .pf-card-text h1,
+main .page-feed.pf-overlay .pf-card-text h2,
+main .page-feed.pf-overlay .pf-card-text h3,
+main .page-feed.pf-overlay .pf-card-text h4,
+main .page-feed.pf-overlay .pf-card-text h5,
+main .page-feed.pf-overlay .pf-card-text span.detail {
+  color: var(--color-white);
+  min-height: unset;
+}
+
+main .page-feed .pf-card .pf-card-text p {
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #747474;
+}
+
+main .page-feed .pf-card .pf-card-text p:not(.detail-m) {
+  font-size: var(--type-body-xs-size);
+  line-height: var(--type-body-xs-lh);
+}
+
+main .page-feed:not(.horizontal):not(.pf-overlay) .pf-card-text > p:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+main .page-feed:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child {
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 0;
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  justify-content: space-between;
+}
+
+main .page-feed:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child a {
+  min-width: unset;
+}
+
+main .page-feed:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child a:only-child {
+  margin-left: auto;
+}
+
+main .page-feed.avatar:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container {
+  justify-content: center;
+  border: unset;
+  padding-top: unset;
+}
+
+main .page-feed.avatar:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container > a:not(.button) {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+main .page-feed.borderless:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child {
+  justify-self: flex-start;
+  align-self: flex-start;
+  border: unset;
+  padding-top: unset;
+}
+
+main .page-feed.borderless:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child a:only-child,
+main .page-feed.avatar:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container:last-child a:only-child {
+  margin: unset;
+}
+
+main .page-feed .pf-card-text span.detail + * {
+  padding-top: 2px;
+  min-height: 54px;
+}
+
+main .page-feed .pf-card .pf-card-text h1,
+main .page-feed .pf-card .pf-card-text h2,
+main .page-feed .pf-card .pf-card-text h3,
+main .page-feed .pf-card .pf-card-text h4,
+main .page-feed .pf-card .pf-card-text h5 {
+  font-size: var(--type-heading-xs-size);
+  line-height: var(--type-heading-xs-lh);
+  min-height: 47px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+main .page-feed.horizontal .pf-card .pf-card-text h1,
+main .page-feed.horizontal .pf-card .pf-card-text h2,
+main .page-feed.horizontal .pf-card .pf-card-text h3,
+main .page-feed.horizontal .pf-card .pf-card-text h4,
+main .page-feed.horizontal .pf-card .pf-card-text h5 {
+  font-size: var(--type-heading-xs-size);
+  line-height: var(--type-heading-xs-lh);
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+main .page-feed .pf-card-banner {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  user-select: none;
+  min-height: 40px;
+  min-width: 40px;
+}
+
+main .page-feed .pf-card-banner > div:not(:empty) {
+  margin-top: 28px;
+  width: auto;
+  margin-left: auto;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background: #1473e6;
+  padding: 8px 12px;
+  border-radius: 4px 0 0 4px;
+}
+
+main .page-feed .pf-card-banner .icon {
+  position: absolute;
+  top: 132px;
+  right: 28px;
+  height: 40px;
+  width: 40px;
+  z-index: 2;
+}
+
+main .page-feed.col-5-pf-cards .pf-card-banner .icon {
+  top: 82px;
+}
+
+main .page-feed.col-2-pf-cards .pf-card-banner .icon,
+main .page-feed.col-3-pf-cards .pf-card-banner .icon {
+  top: 232px;
+}
+
+main .page-feed.pf-overlay .pf-card-banner .icon,
+main .page-feed.pf-overlay.col-2-pf-cards .pf-card-banner .icon,
+main .page-feed.pf-overlay.col-3-pf-cards .pf-card-banner .icon {
+  top: auto;
+  bottom: 28px;
+}
+
+main .page-feed .pf-card-picture img,
+main .page-feed .pf-card-picture video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+main .page-feed .pf-card-picture video {
+  min-width: 101%;
+  transform: translateX(-0.5%);
+}
+
+main .page-feed.col-5-pf-cards .pf-card-picture img,
+main .page-feed.col-5-pf-cards .pf-card-picture video {
+  height: 150px;
+}
+
+main .page-feed.col-2-pf-cards .pf-card-picture img,
+main .page-feed.col-3-pf-cards .pf-card-picture img,
+main .page-feed.col-2-pf-cards .pf-card-picture video,
+main .page-feed.col-3-pf-cards .pf-card-picture video {
+  height: 300px;
+}
+
+main .page-feed.horizontal .pf-card-picture img,
+main .page-feed.horizontal .pf-card-picture video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+}
+
+main .page-feed.avatar .pf-card-picture {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+main .page-feed.avatar .pf-card-picture img,
+main .page-feed.avatar .pf-card-picture video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+main .page-feed.horizontal .pf-card-picture img,
+main .page-feed.horizontal .pf-card-picture video,
+main .page-feed.pf-overlay .pf-card-picture img,
+main .page-feed.pf-overlay .pf-card-picture video,
+main .page-feed.horizontal.col-2-pf-cards .pf-card-picture img,
+main .page-feed.horizontal.col-3-pf-cards .pf-card-picture img,
+main .page-feed.horizontal.col-2-pf-cards .pf-card-picture video,
+main .page-feed.horizontal.col-3-pf-cards .pf-card-picture video,
+main .page-feed.pf-overlay.col-2-pf-cards .pf-card-picture img,
+main .page-feed.pf-overlay.col-3-pf-cards .pf-card-picture img,
+main .page-feed.pf-overlay.col-2-pf-cards .pf-card-picture video,
+main .page-feed.pf-overlay.col-3-pf-cards .pf-card-picture video {
+  height: 100%;
+}
+
+main .page-feed.pf-overlay .pf-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: transparent linear-gradient(180deg, #0000001a 0%, #000c 100%) 0% 0% no-repeat padding-box;
+}
+
+main .page-feed.pf-overlay .pf-card-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+main .page-feed.pf-overlay .pf-card-text {
+  z-index: 3;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 208px;
+}
+
+main .page-feed.horizontal .pf-card {
+  display: flex;
+  width: 100%;
+  max-width: 375px;
+  min-height: 128px;
+}
+
+main .page-feed.horizontal .pf-card-container-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  transition: filter 0.3s;
+}
+
+main .page-feed.horizontal .pf-card-picture {
+  width: 110px;
+  min-width: 110px;
+  position: relative;
+}
+
+main .page-feed.col-2-pf-cards {
+  grid-template-columns: 1fr 1fr;
+}
+
+main .page-feed.col-3-pf-cards {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+main .page-feed.col-4-pf-cards {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+main .page-feed.col-5-pf-cards {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+main .page-feed.horizontal.col-3-pf-cards {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+main .page-feed.horizontal.col-5-pf-cards {
+  grid-template-columns: 1fr;
+}
+
+main .page-feed.horizontal.col-2-pf-cards,
+main .page-feed.horizontal.col-4-pf-cards {
+  grid-template-columns: 1fr 1fr;
+}
+
+main .page-feed.horizontal.col-4-pf-cards {
+  max-width: 770px;
+}
+
+main .section.has-background .page-feed:first-child {
+  margin-top: 0;
+}
+
+main > div.section:first-of-type > .page-feed:first-child {
+  padding-top: 80px;
+}
+
+main .page-feed:not(.horizontal) .pf-card-container-link .pf-card-picture img,
+main .page-feed:not(.horizontal) .pf-card-container-link .pf-card-picture video {
+  transition: filter 0.3s, transform 0.3s;
+}
+
+main .page-feed.pf-fit:not(.horizontal):not(.pf-overlay) .pf-card-picture img,
+main .page-feed.pf-fit:not(.horizontal):not(.pf-overlay) .pf-card-picture video {
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hover Animations */
+
+main .page-feed:not(.horizontal) .pf-card-container-link .pf-card-picture {
+  overflow: hidden;
+}
+
+main .page-feed:not(.horizontal) .pf-card-container-link:hover .pf-card-picture img,
+main .page-feed:not(.horizontal) .pf-card-container-link:focus .pf-card-picture img,
+main .page-feed:not(.horizontal) .pf-card-container-link:hover .pf-card-picture video,
+main .page-feed:not(.horizontal) .pf-card-container-link:focus .pf-card-picture video {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+main .page-feed.horizontal .pf-card-container-link:focus,
+main .page-feed.horizontal .pf-card-container-link:hover {
+  filter: brightness(0.9);
+}
+
+main .section .page-feed + .banner {
+  margin-top: 80px;
+}
+
+main .page-feed.avatar .pf-card-text > p.button-container {
+  text-align: center;
+  justify-content: center;
+}
+
+main .section .page-feed + .content > p.button-container:first-child {
+  margin: 24px auto 0;
+  display: block;
+  width: max-content;
+}
+
+main .page-feed.avatar .pf-card {
+  max-width: 250px;
+  margin-bottom: 40px;
+}
+
+main .page-feed.avatar .pf-card-text {
+  text-align: center;
+}
+
+main .page-feed.avatar:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container > a:not(.button) img {
+  height: 25px;
+  transition: filter 0.2s;
+}
+
+main .page-feed.avatar:not(.horizontal):not(.pf-overlay) .pf-card-text > .button-container > a:not(.button) img:hover {
+  filter: brightness(0.9);
+}
+
+@media screen and (max-width: 999px) {
+  main .page-feed.col-2-pf-cards .pf-card-picture img,
+  main .page-feed.col-3-pf-cards .pf-card-picture img,
+  main .page-feed.col-2-pf-cards .pf-card-picture video,
+  main .page-feed.col-3-pf-cards .pf-card-picture video {
+    height: 200px;
+  }
+
+  main .section > div > .page-feed + p.button-container {
+    justify-content: center;
+  }
+
+  main .page-feed.col-2-pf-cards .pf-card-banner .icon,
+  main .page-feed.col-3-pf-cards .pf-card-banner .icon {
+    top: 132px;
+  }
+
+  main .page-feed.col-2-pf-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  main .page-feed.horizontal.col-3-pf-cards {
+    grid-template-columns: 1fr;
+  }
+
+  main .page-feed.col-4-pf-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main .page-feed.col-3-pf-cards.horizontal {
+    max-width: 600px;
+  }
+
+  main .page-feed.col-3-pf-cards.horizontal .pf-card {
+    width: 100%;
+  }
+
+  main .page-feed.col-5-pf-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  main .page-feed.horizontal.col-3-pf-cards,
+  main .page-feed.horizontal.col-5-pf-cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 799px) {
+  main .page-feed .pf-card {
+    max-width: 500px;
+  }
+
+  main .page-feed.col-3-pf-cards,
+  main .page-feed.col-5-pf-cards {
+    grid-template-columns: 1fr;
+  }
+
+  main .page-feed.col-2-pf-cards,
+  main .page-feed.col-4-pf-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  main .page-feed.horizontal.col-2-pf-cards,
+  main .page-feed.horizontal.col-4-pf-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  main .page-feed.col-2-pf-cards,
+  main .page-feed.col-3-pf-cards,
+  main .page-feed.col-4-pf-cards,
+  main .page-feed.col-5-pf-cards {
+    grid-template-columns: 1fr;
+  }
+
+  main .page-feed.horizontal.col-2-pf-cards,
+  main .page-feed.horizontal.col-4-pf-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .page-feed.borderless.col-2-pf-cards > .pf-card,
+  main .page-feed.avatar.col-2-pf-cards > .pf-card {
+    max-width: 700px;
+  }
+
+  main .page-feed.borderless.pf-fit.col-2-pf-cards,
+  main .page-feed.avatar.pf-fit.col-2-pf-cards {
+    max-width: 1000px;
+  }
+}

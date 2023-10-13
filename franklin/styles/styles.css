@@ -64,6 +64,37 @@ body.artisthub main .section > .content {
   padding: 32px 0;
 }
 
+body.artisthub main .button-container.page-feed-load-more {
+  margin: 24px auto 0;
+  display: block;
+  width: max-content;
+}
+
+body.artisthub main .button-container.page-feed-load-more .button {
+  color: var(--color-transparent-button-border);
+  border-color: var(--color-transparent-button-border);
+  background-color: var(--color-transparent-button-bg);
+  margin: 0 0 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--body-line-height);
+  cursor: pointer;
+  transition: background-color .3s, color .3s, border .3s;
+  border-width: 2px;
+  border-style: solid;
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 4px 1.2em 5px;
+  text-align: center;
+  font-size: var(--type-body-xs-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  min-width: 100px;
+}
+
+
 @media(min-width: 1000px) {
   body.artisthub main .section > .content {
     max-width: 700px;
