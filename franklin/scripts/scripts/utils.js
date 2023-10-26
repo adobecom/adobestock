@@ -37,10 +37,3 @@ export const [setLibs, getLibs] = (() => {
     }, () => libs,
   ];
 })();
-
-const LIBS = 'https://milo.adobe.com/libs';
-const miloLibs = setLibs(LIBS);
-export const { getConfig, createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
-export const { replaceKey } = await import(`${miloLibs}/features/placeholders.js`);
-export const { decorateButtons } = await import(`${miloLibs}/utils/decorate.js`);
-export const { decorateBlockAnalytics, decorateLinkAnalytics } = await import(`${miloLibs}/martech/attributes.js`);

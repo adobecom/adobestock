@@ -16,7 +16,7 @@ import {
   createTag,
   decorateBlockAnalytics,
   loadStyle,
-} from '../../scripts/scripts/utils.js';
+} from '../../scripts/scripts/scripts.js';
 
 export function makeRelative(href) {
   const projectName = 'stock--adobecom';
