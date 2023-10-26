@@ -13,12 +13,25 @@
 import {
   getConfig,
   replaceKey,
-  toSentenceCase,
-  loadBlockCSS,
   createTag,
-  makeRelative,
   decorateBlockAnalytics,
+  loadStyle,
 } from '../../scripts/scripts/utils.js';
+
+export function makeRelative(href) {
+  const projectName = 'stock--adobecom';
+  const productionDomains = ['stock.adobe.com'];
+  const fixedHref = href.replace(/\u2013|\u2014/g, '--');
+  const hosts = [`${projectName}.hlx.page`, `${projectName}.hlx.live`, ...productionDomains];
+  const url = new URL(fixedHref);
+  const relative = hosts.some((host) => url.hostname.includes(host))
+    || url.hostname === window.location.hostname;
+  return relative ? `${url.pathname}${url.search}${url.hash}` : href;
+}
+
+function toSentenceCase(str) {
+  return (str && typeof str === 'string') ? str.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase()) : '';
+}
 
 function handlize(string) {
   return string.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '').replace(/^-/, '');
@@ -79,7 +92,7 @@ async function buildCards(block, payload) {
   }
 
   if (tabCounts > 0) {
-    await loadBlockCSS('page-feed');
+    await loadStyle('page-feed');
     cardsTray.style.removeProperty('opacity');
     cardsTray.style.removeProperty('pointer-events');
   }
