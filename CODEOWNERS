@@ -1,0 +1,15 @@
+# Adobe Stock CODEOWNERS
+# When you create a new block please establish ownership in this file.
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+ 
+# Adobe Stock Core (alphabetical order)
+/fstab.yaml @adobecom/stock
+/404.html @adobecom/stock
+/head.html @adobecom/stock
+/package.json @adobecom/stock
+/tools/sidekick/ @adobecom/stock
+/franklin/scripts/ @adobecom/stock
+/franklin/styles/styles.css @adobecom/stock
+ 
+# Artist Hub team
+/franklin/templates/artisthub @adobecom/webistry
