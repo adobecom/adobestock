@@ -1,0 +1,286 @@
+main .course {
+  max-width: var(--grid-container-width);
+  margin: var(--block-spacing-s) auto;
+}
+
+main .course .video-player-wrapper {
+  display: grid;
+  align-items: center;
+  grid-gap: 32px;
+  margin-bottom: 40px;
+  grid-template-columns: 70% 30%;
+  box-sizing: border-box;
+}
+
+main .course .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+main .course .video-wrapper video {
+	position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: white;
+}
+
+main .course .video-player-menu {
+  width: 100%;
+  height: 100%;
+}
+
+main .course .video-player-menu-heading {
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+main .course .video-player-list-wrapper {
+  padding: 24px;
+  background-color: #f4f4f4;
+}
+
+main .course .video-player-list {
+  padding: 0;
+  margin: 0;
+}
+
+main .course .video-player-list-item {
+  padding: 0 0 0 20px;
+  list-style: none;
+}
+
+main .course .video-player-list-link {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  background-color: rgb(0 0 0 / 0%);
+  border: none;
+  color: var(--text-color);
+  justify-content: space-between;
+  font-family: var(--body-font-family);
+  font-size: var(--type-body-m-size);
+  line-height: var(--type-body-m-lh);
+  padding: 6px 0;
+  text-align: left;
+  margin: 0;
+}
+
+main .course .video-player-list-link .video-title-wrapper {
+  position: relative;
+  max-width: calc(100% - 48px);
+}
+
+main .course .video-player-list-link .video-number-span {
+  position: absolute;
+  padding-right: 6px;
+  right: 100%;
+}
+
+main .course .video-player-list-link .video-title-span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .course .video-player-list-link:hover .video-title-span {
+  text-decoration: underline;
+}
+
+main .course .video-player-list-link.active {
+  color: var(--text-color);
+  -webkit-text-stroke-width: .6px;
+  -webkit-text-stroke-color: var(--text-color);
+}
+
+main .course .tabbed-area .video-title {
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: var(--grid-container-width);
+}
+
+main .course .tabbed-area .tabs {
+  width: 70%
+}
+
+main .course .tabbed-area {
+  max-width: 900px;
+  padding-bottom: var(--block-spacing-l)
+}
+
+main .course .tabs {
+  display: flex;
+  gap: 8%;
+  padding-right: 8%;
+  margin-bottom: 40px;
+}
+
+main .course .tabs .tab {
+  cursor: pointer;
+  letter-spacing: .6px;
+  padding: 2px;
+  font-size: 20px;
+  background-color: rgb(0 0 0 / 0%);
+  border: 3px solid rgb(0 0 0 / 0%);
+  color: var(--text-color);
+  display: block;
+  font-family: var(--body-font-family);
+  margin: 0;
+  line-height: var(--type-body-m-lh);
+  border-radius: 3px;
+}
+
+main .course .tabs .tab.active {
+  color: var(--text-color);
+  -webkit-text-stroke-width: .6px;
+  -webkit-text-stroke-color: var(--text-color);
+  border-bottom: solid 3px var(--text-color);
+}
+
+main .course .tabs .tab:hover {
+  text-decoration: unset;
+  border-bottom: solid 3px var(--text-color);
+}
+
+main .course .content-area ul li {
+  font-size: var(--type-body-s-size);
+  line-height: var(--type-body-s-lh);
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+main .course .content-area ul {
+  padding-top: 0;
+  padding-bottom: 12px;
+}
+
+@media screen and (max-width: 999px) {
+  main .course .tabbed-area .video-title {
+    width: 100%;
+    max-width: unset;
+  }
+
+  main .course .tabbed-area .tabs {
+    width: 100%;
+    max-width: 500px;
+    gap: 4%;
+  }
+
+  main .course .video-player-wrapper {
+    display: block;
+  }
+
+  main .course .video-player-wrapper .video-wrapper {
+    margin-bottom: 32px;
+  }
+
+  main .course .tabs {
+    padding: 0;
+  }
+
+  main .course .tabs .tab {
+    font-size: 16px;
+  }
+}
+
+main .course .video-title-duration {
+  padding-left: 8px;
+}
+
+main .course .video-title-span {
+  display: block;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .course .page-feed.horizontal,
+main .course .page-feed.horizontal.col-1-pf-cards,
+main .course .page-feed.horizontal.col-2-pf-cards,
+main .course .page-feed.horizontal.col-3-pf-cards,
+main .course .page-feed.horizontal.col-4-pf-cards,
+main .course .page-feed.horizontal.col-5-pf-cards,
+main .course .page-feed.horizontal.col-6-pf-cards {
+  justify-content: start;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  main .course .page-feed.horizontal,
+  main .course .page-feed.horizontal.col-1-pf-cards,
+  main .course .page-feed.horizontal.col-2-pf-cards,
+  main .course .page-feed.horizontal.col-3-pf-cards,
+  main .course .page-feed.horizontal.col-4-pf-cards,
+  main .course .page-feed.horizontal.col-5-pf-cards,
+  main .course .page-feed.horizontal.col-6-pf-cards {
+    max-width: var(--grid-container-width);
+  }
+
+  main .course {
+    max-width: 100%;
+  }
+
+  main .course .video-player-wrapper .video-wrapper {
+    margin-bottom: 0;
+  }
+
+  main .course .video-player-wrapper {
+    margin-bottom: 16px;
+  }
+
+  main .course .tabbed-area .content-area {
+    max-width: var(--grid-container-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main .course .tabbed-area .tabs,
+  main .course .tabbed-area .video-title {
+    max-width: var(--grid-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  main .course .tabbed-area .tabs .tab {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: var(--type-body-xs-size);
+  }
+
+  main .course .tabbed-area .tabs .tab:first-child {
+    margin-left: 0;
+  }
+
+  main .course .tabbed-area .tabs .tab:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main .course .tabbed-area .tabs,
+  main .course .tabbed-area .video-title {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  main .course .tabbed-area .tabs {
+    gap: 2%;
+  }
+
+  main .course .tabbed-area .video-title {
+    padding-bottom: 16px;
+  }
+
+  main .course .tabbed-area .tabs .tab {
+    font-size: var(--type-body-xxs-size);
+  }
+}
