@@ -69,35 +69,6 @@
       "paletteRect": "top: auto; bottom: 25px; left: 75px; height: 388px; width: 360px;",
       "url": "https://milo.adobe.com/tools/locale-nav",
       "includePaths": [ "**.docx**" ]
-    },
-    {
-      "id": "publish_content",
-      "title": "Publish Content",
-      "isContainer": true
-    },
-    {
-      "id": "publish_prod_discover",
-      "title": "Discover Pages",
-      "environments": [ "edit", "dev", "preview", "live" ],
-      "isPalette": true,
-      "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 398px; width: 360px;",
-      "url": "https://main--adobestock--adobecom.hlx.page/tools/publish?pages=discover"
-    },
-    {
-      "id": "publish_prod_calendar",
-      "title": "Calendar Pages",
-      "environments": [ "edit", "dev", "preview", "live" ],
-      "isPalette": true,
-      "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 398px; width: 360px;",
-      "url": "https://main--adobestock--adobecom.hlx.page/tools/publish?pages=calendar"
-    },
-    {
-      "id": "publish_prod_landing_pages",
-      "title": "Landing Pages",
-      "environments": [ "edit", "dev", "preview", "live" ],
-      "isPalette": true,
-      "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 398px; width: 360px;",
-      "url": "https://main--adobestock--adobecom.hlx.page/tools/publish?pages=landing_pages"
     }
   ]
 }
