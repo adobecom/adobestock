@@ -76,12 +76,13 @@
       "isContainer": true
     },
     {
+      "containerId": "publish_content",
       "id": "publish_prod_discover",
       "title": "Discover Pages",
       "environments": [ "edit", "dev", "preview", "live" ],
       "isPalette": true,
       "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 398px; width: 360px;",
-      "url": "https://main--adobestock--adobecom.hlx.page/tools/publish?pages=discover"
+      "url": "https://adobestock.loc.adobe.com/premium/_franklinUpdate?page=landingPages"
     },
     {
       "id": "publish_prod_calendar",
