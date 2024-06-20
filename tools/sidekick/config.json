@@ -69,6 +69,12 @@
       "paletteRect": "top: auto; bottom: 25px; left: 75px; height: 388px; width: 360px;",
       "url": "https://milo.adobe.com/tools/locale-nav",
       "includePaths": [ "**.docx**" ]
+    },
+    {
+      "id": "update_pages",
+      "title": "Update Pages",
+      "environments": [ "edit", "dev", "preview", "live", "prod" ],
+      "url": "https://stock.adobe.com/premium/_cmsTools"
     }
   ]
 }
