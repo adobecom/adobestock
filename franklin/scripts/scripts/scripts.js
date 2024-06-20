@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { setLibs, createTag } from './utils.js';
+import { setLibs } from './utils.js';
 
 // Add project-wide style path here.
 const STYLES = '/franklin/styles/styles.css';
@@ -56,6 +56,9 @@ const miloLibs = setLibs(LIBS);
     document.head.appendChild(link);
   });
 }());
+
+export const { loadArea, loadDelayed, setConfig, createTag, getConfig } = await import(`${miloLibs}/utils/utils.js`);
+export const { replaceKey } = await import(`${miloLibs}/features/placeholders.js`);
 
 /**
  * Helper method to load Stock footer left links
@@ -120,15 +123,14 @@ function loadFooter() {
 (async function loadPage() {
   // temporary fix until Milo load template assets differently
   const template = document.head.querySelector('meta[name="template"]');
-  if (template?.content === 'artisthub') document.body.classList.add('artisthub');
-
-  const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
+  const isArtisthub = template?.content === 'artisthub';
+  if (isArtisthub) document.body.classList.add('artisthub');
 
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadDelayed();
 
-  if (!window.location.href.includes('/pages/artisthub')) {
+  if (!isArtisthub) {
     const footer = document.querySelector('footer');
     if (footer) {
       loadFooter();
