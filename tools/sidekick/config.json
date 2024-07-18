@@ -18,15 +18,6 @@
     },
     {
       "containerId": "tools",
-      "id": "localize",
-      "title": "Localize",
-      "environments": [ "edit" ],
-      "url": "https://main--milo--adobecom.hlx.page/tools/loc/index.html?project=adobestock--adobecom",
-      "passReferrer": true,
-      "includePaths": [ "**.xlsx**" ]
-    },
-    {
-      "containerId": "tools",
       "id": "localize-2",
       "title": "Localize (V2)",
       "environments": [ "edit" ],
