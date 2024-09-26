@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { setLibs, createTag } from './utils.js';
+import { setLibs } from './utils.js';
 
 // Add project-wide style path here.
 const STYLES = '/franklin/styles/styles.css';
@@ -56,6 +56,10 @@ const miloLibs = setLibs(LIBS);
     document.head.appendChild(link);
   });
 }());
+
+export const { getConfig, createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
+export const { replaceKey } = await import(`${miloLibs}/features/placeholders.js`);
+export const { decorateBlockAnalytics } = await import(`${miloLibs}/martech/attributes.js`);
 
 /**
  * Helper method to load Stock footer left links
