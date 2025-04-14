@@ -69,3 +69,22 @@ body.artisthub main .section > .content {
     max-width: 700px;
   }
 }
+
+:root {
+  /* Spacing between sections */
+  --block-spacing-xs: 40px;
+  --block-spacing-s: 64px;
+  --block-spacing-m: 80px;
+  --block-spacing-l: 96px;
+  --block-spacing-xl: 120px;
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --block-spacing-xs: 40px;
+    --block-spacing-s: 64px;
+    --block-spacing-m: 80px;
+    --block-spacing-l: 96px;
+    --block-spacing-xl: 120px;
+  }
+}
