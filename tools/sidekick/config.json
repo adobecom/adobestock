@@ -1,6 +1,7 @@
 {
   "project": "Adobe Stock",
   "host": "stock.adobe.com",
+  "trustedHosts": ["milo.adobe.com", "main--milo--adobecom.aem.page"],
   "plugins": [
     {
       "id": "library",
