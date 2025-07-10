@@ -63,6 +63,13 @@
       "includePaths": [ "**.docx**" ]
     },
     {
+      "containerId": "tools",
+      "id": "bulk-update",
+      "title": "Bulk Update",
+      "environments": [ "edit", "dev", "preview", "live", "prod" ],
+      "url": "https://main--adobestock--adobecom.aem.live/tools/bulk-publish",
+    },
+    {
       "id": "update_pages",
       "title": "Update Pages",
       "environments": [ "edit", "dev", "preview", "live", "prod" ],
